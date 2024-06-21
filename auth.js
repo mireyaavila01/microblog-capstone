@@ -1,5 +1,11 @@
 /* auth.js provides LOGIN-related functions */
 
+//DELETE WHEN DONE 
+//TEST TOKEN , DON'T FORGET TO DELETE
+//"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pcmV5YWF2aWxhIiwiaWF0IjoxNzE4OTk2OTA0LCJleHAiOjE3MTkwODMzMDR9.jzXDIQr0mJ3qjzGkxNREyQ2cH-89sGtaNoKVbaonFUM"
+
+
+
 "use strict";
 
 const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
