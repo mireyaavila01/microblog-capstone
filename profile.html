@@ -1,4 +1,4 @@
-<!-- POSTS page -->
+<!-- Profile page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,30 +14,38 @@
         crossorigin="anonymous"></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="css/global.css">
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./posts.css">
+    <link rel="stylesheet" href="#">
 
-    <title>/POSTS</title>
+    <title>PROFILE</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../auth.js"></script>
+    <script src="scripts/auth.js"></script>
     <script>
-        if (isLoggedIn() === false) window.location.replace("/");
+        if (isLoggedIn() === false) window.location.replace("/index.html");
     </script>
 </head>
 <body>
 
     <header>
-        <h1>POSTS PAGE</h1>
+        <h1>PROFILE PAGE</h1>
     </header>
 
-    <main></main>
+    <main>
+        <div>
+            <a href="posts.html">Post Page</a>
+            
+        </div>
+        <div>
+            <button id="logoutButton">Logout</button>
+        </div>
+    </main>
 
     <footer></footer>
 
     <!-- Page-specific code -->
-    <script src="./posts.js"></script>
+    <script src="scripts/profile.js"></script>
 </body>
 </html>
