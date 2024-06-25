@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,9 +17,9 @@
     <link rel="stylesheet" href="css/global.css">
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="signUp.css">
+    <link rel="stylesheet" href="css/signUp.css">
 
-    <title>Sign Up to the Microblog Network!</title>
+    <title>Sign Up For Tiny Tales!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute):
     <script src="./auth.js"></script>
@@ -26,32 +27,38 @@
         if (isLoggedIn() === true) window.location.replace("/signUp.html");
     </script> -->
 </head>
+
 <body>
 
-    <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
-    </header>
+
 
     <main>
-
-        <form id="signUp">
+        <div class="container">
+            <header  class="text-center">
+                <h1>Welcome to <code>Tiny Tales</code></h1>
+            </header>
+        
+        <form id="signUp" class="container form-control">
             <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" class="form-control" minlength="3">
             </div>
 
             <div>
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" minlength="3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" id="fullName" class="form-control" minlength="3">
             </div>
 
             <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" minlength="6">
             </div>
 
-            <button id="signUpBtn" type="submit">Sign Up </button>
+            
+            <p id="messagePara"></p>
         </form>
+        <button id="signUpBtn" type="submit" class="btn btn-success mt-3">Sign Up </button>
+        </div>
 
     </main>
 
@@ -60,4 +67,5 @@
     <!-- Page-specific code -->
     <script src="scripts/signUp.js"></script>
 </body>
+
 </html>
