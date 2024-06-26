@@ -1,1 +1,23 @@
 /* Posts Page CSS */
+
+.card {
+    border: 1px solid rgba(0, 0, 0, 0.125); /* Example: Add a subtle border */
+    border-radius: 8px; /* Example: Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Example: Add shadow for depth */
+}
+
+.card-header {
+    border-bottom: none; /* Example: Remove bottom border if not needed */
+}
+
+.card-footer {
+    border-top: none; /* Example: Remove top border if not needed */
+}
+
+.navbar-custom {
+    background: linear-gradient(to right, #FFB88C, #DE6262);
+}
+
+#logoutButton {
+    margin-left: 10px; /* Example: Add some margin for spacing */
+}

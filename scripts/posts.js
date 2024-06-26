@@ -37,9 +37,10 @@ function fetchPosts() {
 function createPostCard(post) {
     let cardDiv = document.createElement("div");
     cardDiv.className = "card text-center mb-4";
+    
 
     let cardHeader = document.createElement("div");
-    cardHeader.className = "card-header";
+    cardHeader.className = "card-header bg-warning text-white";
     cardHeader.innerHTML = formatTimestamp(post.createdAt); //the timestamp from the post 
     cardDiv.appendChild(cardHeader);
 
@@ -58,7 +59,7 @@ function createPostCard(post) {
     cardBody.appendChild(bodyPara);
 
     let cardFooter = document.createElement("div");
-    cardFooter.className = "card-footer text-body-secondary";
+    cardFooter.className = "card-footer bg-light text-muted";
 
     let thumbsUp = document.createElement("i");
     thumbsUp.className = "fas fa-thumbs-up"

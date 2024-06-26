@@ -1,0 +1,7 @@
+.navbar-custom {
+    background: linear-gradient(to right, #FFB88C, #DE6262);
+}
+
+#logoutButton {
+    margin-left: 10px; /* Example: Add some margin for spacing */
+}

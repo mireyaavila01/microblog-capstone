@@ -33,32 +33,70 @@
 
 
     <main>
-        <div class="container">
-            <header  class="text-center">
-                <h1>Welcome to <code>Tiny Tales</code></h1>
-            </header>
-        
-        <form id="signUp" class="container form-control">
-            <div>
-                <label for="username" class="form-label">Username</label>
-                <input type="text" id="username" class="form-control" minlength="3">
-            </div>
+ 
 
-            <div>
-                <label for="fullName" class="form-label">Full Name</label>
-                <input type="text" id="fullName" class="form-control" minlength="3">
-            </div>
+        <section class="h-100 gradient-form" style="background-color: rgb(233, 232, 233) ;">
+            <div class="container-flex py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-xl-10">
+                        <div class="card rounded-3 text-black">
+                            <div class="row g-0">
+                                <div class="col-lg-6">
+                                    <div class="card-body p-md-5 mx-md-4">
+                                        <div class="text-center">
+                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                                                style="width: 185px;" alt="logo">
+                                            <h4 class="mt-1 mb-5 pb-1">Join Us at Tiny</h4>
+                                        </div>
+                                        <form id="signUp">
+                                            <p>Please create your account</p>
 
-            <div>
-                <label for="password" class="form-label">Password</label>
-                <input type="password" id="password" class="form-control" minlength="6">
-            </div>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="text" id="username" class="form-control"
+                                                    placeholder="Username" />
 
-            
-            <p id="messagePara"></p>
-        </form>
-        <button id="signUpBtn" type="submit" class="btn btn-success mt-3">Sign Up </button>
-        </div>
+                                            </div>
+
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="text" id="fullName" class="form-control"
+                                                    placeholder="Full Name" />
+
+                                            </div>
+
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="password" id="password" class="form-control"
+                                                    placeholder="Password" />
+
+                                            </div>
+                                        </form>
+
+                                        <div class="text-center pt-1 mb-5 pb-1">
+                                            <button data-mdb-button-init data-mdb-ripple-init
+                                                class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" id="signUpBtn"
+                                                type="submit">Sign up</button>
+                                        </div>
+
+                                        <p id="messagePara"></p>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                        <h4 class="mb-4">We are more than just a company</h4>
+                                        <p class="small mb-0">Imagine a vibrant microblogging website where creativity knows no bounds and connections flourish
+                                            effortlessly. On this digital playground, users craft posts that range from introspective anecdotes
+                                            to humorous observations, each a tiny window into their lives and interests. The platform thrives on
+                                            the diversity of its community, where individuals from different corners of the world converge to
+                                            share passions, debate ideas, and forge friendships. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
     </main>
 
