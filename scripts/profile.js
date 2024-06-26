@@ -2,32 +2,59 @@
 
 "use strict";
 
-document.getElementById('logoutButton').addEventListener('click', logout);
 
-function logout () {
-    const loginData = getLoginData();
+document.getElementById('logoutButton').addEventListener('click', function () {
+    logout();
+});
+document.getElementById('postForm').addEventListener('submit', submitPost);
 
-    // GET /auth/logout
-    const options = { 
-        method: "GET",
-        headers: { 
-            // This header is how we authenticate our user with the
-            // server for any API requests which require the user
-            // to be logged-in in order to have access.
-            // In the API docs, these endpoints display a lock icon.
-            Authorization: `Bearer ${loginData.token}`,
-        },
+
+
+function submitPost(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get the post content from the textarea
+    const postContent = document.getElementById('postContent').value.trim();
+
+    if (postContent === '') {
+        alert('Please enter some content for your post.');
+        return;
+    }
+
+    // Call function to create post
+    createPost(postContent);
+}
+
+function createPost(content) {
+    const loginData = JSON.parse(localStorage.getItem('login-data')); // Assuming you have stored login data in localStorage
+
+    const postData = {
+        text: content,
     };
 
-    fetch(apiBaseURL + "/auth/logout", options)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .finally(() => {
-            // We're using `finally()` so that we will continue with the
-            // browser side of logging out (below) even if there is an 
-            // error with the fetch request above.
 
-            window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("index.html");  // redirect back to landing page
+    fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
+        method: "POST",
+        body: JSON.stringify(postData),
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${loginData.token}`,
+        },
+
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to create post.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Post created successfully:', data);
+            alert('Post created successfully!');
+
+            window.location.href = '/posts.html'; // Redirect to posts page
+        })
+        .catch(error => {
+            console.error('Error creating posts:', error);
         });
 }
