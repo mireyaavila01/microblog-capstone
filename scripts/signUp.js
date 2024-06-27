@@ -31,7 +31,7 @@ function signUpBtnClicked() {
             console.log(data)
             let messagePara =
                 document.getElementById("messagePara");
-            messagePara.className = "container text-center text-success"
+            messagePara.className = "container text-center text-danger message-style"
             messagePara.innerHTML = "***New Account Created***<br>Click <a href='/index.html'>here</a> to log in.";
 
             // Clear input fields after account creation

@@ -1,14 +1,26 @@
 /* Posts Page CSS */
 
 .card {
-    border: 1px solid rgba(0, 0, 0, 0.125); /* Example: Add a subtle border */
-    border-radius: 8px; /* Example: Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Example: Add shadow for depth */
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    transform: translateY(0); /* Initial position */
 }
 
-.card-header {
-    border-bottom: none; /* Example: Remove bottom border if not needed */
+.card:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); /* Medium red shadow */
+    transform: translateY(-5px); /* Move the card up by 5px */
 }
+
+
+.card-header {
+    background: linear-gradient(to right, #f0f0f0, #cccccc); /* Linear gradient from left to right */
+    padding: 0.75rem 1.25rem; /* Adjust padding as needed */
+    color: #333333; /* Text color */
+}
+
+
 
 .card-footer {
     border-top: none; /* Example: Remove top border if not needed */

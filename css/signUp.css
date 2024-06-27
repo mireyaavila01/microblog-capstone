@@ -20,4 +20,58 @@
       height: 100vh !important;
     }
   }
+
+  h4.mt-1.mb-5.pb-1 {
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 30px;
+    color: #DE6262;
+}
   
+  h4.mt-1.mb-5.pb-1::after {
+  content: " ";
+  width: 100px;
+  height: 5px;
+  background: #FEB58A;
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.message-style {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif; /* Example: Specify a font family */
+    color: #333; /* Example: Set text color */
+    text-align: center; /* Center align text */
+}
+
+.message-style a {
+    color: #dc3545;
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+    padding: 8px 16px; /* Add padding to make it look like a button */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #f0f0f0; /* Background color */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    display: inline-block; /* Ensure link behaves like a block element */
+}
+
+.message-style a:hover {
+    background-color: #dc3545; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* body{
+    background-image: url('../images/backgroundimage.webp');
+    background-repeat: repeat;
+} */
