@@ -9,8 +9,10 @@ const postCards = document.getElementById("postCards");
 document.getElementById('logoutButton').addEventListener('click', function () {
     logout();
 });
+
 window.onload = function () {
     fetchPosts();
+    fetchUsers();
 };
 
 
@@ -34,48 +36,12 @@ function fetchPosts() {
         });
 }
 
-// function createPostCard(post) {
-//     let cardDiv = document.createElement("div");
-//     cardDiv.className = "card text-center mb-4";
-    
 
-//     let cardHeader = document.createElement("div");
-//     cardHeader.className = "card-header bg-warning text-white";
-//     cardHeader.innerHTML = formatTimestamp(post.createdAt); 
-//     cardDiv.appendChild(cardHeader);
-
-//     let cardBody = document.createElement("div");
-//     cardBody.className = "card-body";
-//     cardDiv.appendChild(cardBody);
-
-//     let bodyHeading = document.createElement("h5");
-//     bodyHeading.className = "card-title"
-//     bodyHeading.innerHTML = post.username; /
-//     cardBody.appendChild(bodyHeading);
-
-//     let bodyPara = document.createElement("p");
-//     bodyPara.className = "card-text";
-//     bodyPara.innerHTML = post.text 
-//     cardBody.appendChild(bodyPara);
-
-//     let cardFooter = document.createElement("div");
-//     cardFooter.className = "card-footer bg-light text-muted";
-
-//     let thumbsUp = document.createElement("i");
-//     thumbsUp.className = "fas fa-thumbs-up"
-
-//     cardFooter.appendChild(thumbsUp);
-//     cardDiv.appendChild(cardFooter);
-
-//     return cardDiv;
-
-
-// }
 
 function createPostCard(post) {
     // Create main card element
     let cardDiv = document.createElement("div");
-    cardDiv.className = "col-lg-6 col-md-8 mb-4";
+    cardDiv.className = "col-12 mb-4";
 
     // Create card element
     let card = document.createElement("div");
@@ -125,13 +91,18 @@ function createPostCard(post) {
 
     // Like button
     let likeButton = document.createElement("button");
-    likeButton.className = "btn btn-sm btn-outline-primary";
+    likeButton.className = "btn btn-sm btn-outline-danger btn-like me-1";
     likeButton.innerHTML = '<i class="fas fa-thumbs-up me-1"></i> Like';
     cardFooter.appendChild(likeButton);
 
+     // Add event listener to toggle like button state
+     likeButton.addEventListener("click", function () {
+        toggleLike(likeButton);
+    });
+
     // Comment button
     let commentButton = document.createElement("button");
-    commentButton.className = "btn btn-sm btn-outline-secondary";
+    commentButton.className = "btn btn-sm btn-outline-secondary ms-1";
     commentButton.innerHTML = '<i class="fas fa-comment me-1"></i> Comment';
     cardFooter.appendChild(commentButton);
 
@@ -140,6 +111,51 @@ function createPostCard(post) {
     cardDiv.appendChild(card);
 
     return cardDiv;
+}
+
+//function to get list of users
+function fetchUsers() {
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/users", {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${JSON.parse(window.localStorage.getItem("login-data")).token}`,
+        },
+    })
+        .then(response => response.json())
+        .then(users => {
+            console.log("Users:", users); // Optional: Log fetched users
+            let userList = document.getElementById("userList");
+            users.forEach(user => {
+                userList.appendChild(createUserItem(user));
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching users:', error);
+        });
+}
+
+function createUserItem(user) {
+    // Create list item
+    let listItem = document.createElement("a");
+    listItem.className = "list-group-item list-group-item-action";
+    listItem.href = "#"; // Adjust as needed
+
+    // Avatar
+    let avatarImg = document.createElement("img");
+    avatarImg.src = "images/avatarimage.png";
+    avatarImg.alt = "Avatar";
+    avatarImg.className = "rounded-circle me-2";
+    avatarImg.style.width = "30px";
+    avatarImg.style.height = "30px";
+    listItem.appendChild(avatarImg);
+
+    // Username
+    let usernameSpan = document.createElement("span");
+    usernameSpan.textContent = user.username;
+    listItem.appendChild(usernameSpan);
+
+    return listItem;
 }
 
 
@@ -155,4 +171,17 @@ function formatTimestamp(timestamp) {
         second: '2-digit'
     };
     return date.toLocaleDateString('en-US', options);
+}
+
+// Function to toggle like state
+function toggleLike(likeButton) {
+    if (likeButton.classList.contains("active")) {
+        // Already liked, so unlike (remove active class)
+        likeButton.classList.remove("active");
+        likeButton.innerHTML = '<i class="fas fa-thumbs-up me-1"></i> Like';
+    } else {
+        // Not liked, so like (add active class)
+        likeButton.classList.add("active");
+        likeButton.innerHTML = '<i class="fas fa-thumbs-up me-1"></i> Liked';
+    }
 }

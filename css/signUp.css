@@ -33,12 +33,12 @@
   width: 100px;
   height: 5px;
   background: #FEB58A;
-  display: block;
+  display: block;it 
   margin-top: 20px;
   border-radius: 3px;
   margin-left: auto;
   margin-right: auto;
-}
+} 
 
 .message-style {
     margin-top: 20px;
@@ -71,7 +71,3 @@
     text-decoration: none; /* Remove underline on hover */
 }
 
-/* body{
-    background-image: url('../images/backgroundimage.webp');
-    background-repeat: repeat;
-} */

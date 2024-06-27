@@ -33,3 +33,59 @@
 #logoutButton {
     margin-left: 10px; /* Example: Add some margin for spacing */
 }
+
+.btn-like.active {
+    background-color: rgb(245, 12, 12); /* redish background color */
+    color: #fff; /* White text color */
+    border-color: rgb(245, 12, 12); /* redish border color (if applicable) */
+}
+
+.btn-like.active:hover {
+    background-color: red; /* Darker red on hover */
+    border-color: red /* Darker red border on hover */
+}
+.list-group-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f79156;;
+}
+
+.list-group-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.list-group-item span {
+    font-weight: bold;
+}
+
+.friends-heading {
+    color: #f79156; /* Text color */
+    font-weight: bold; /* Bold text */
+    font-size: 1.2rem; /* Font size */
+    margin-bottom: 10px; /* Space below the heading */
+    margin-left: 20px;
+    position: relative; /* Positioning context for the underline */
+    
+}
+
+.friends-heading::after {
+    content: "";
+    display: block;
+    width: 50%; /* Adjust as needed */
+    height: 2px; /* Medium thickness */
+    background-color: #FFA500; /* Orange underline color */
+    position: absolute;
+    bottom: -4px; /* Position just below the text */
+    left: 0; /* Align with the left edge of the heading */
+}
+

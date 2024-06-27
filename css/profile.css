@@ -12,16 +12,54 @@ body {
 }
 
 .card {
-    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    transform: translateY(0); /* Initial position */
 }
 
+.card:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); /* Medium red shadow */
+    transform: translateY(-5px); /* Move the card up by 5px */
+}
+
+
+.card-header {
+    background: linear-gradient(to right, #f0f0f0, #cccccc); /* Linear gradient from left to right */
+    padding: 0.75rem 1.25rem; /* Adjust padding as needed */
+    color: #333333; /* Text color */
+}
+
+
 .btn-primary {
-    background-color: #007bff; /* Customize primary button color */
+    background-color: #f86d47; /* Customize primary button color */
+}
+
+.btn-like.active {
+    background-color: rgb(245, 12, 12); /* redish background color */
+    color: #fff; /* White text color */
+    border-color: rgb(245, 12, 12); /* redish border color (if applicable) */
+}
+
+.btn-like.active:hover {
+    background-color: red; /* Darker red on hover */
+    border-color: red /* Darker red border on hover */
 }
 
 .navbar-brand {
     font-weight: bold;
 }
+
+.my-posts-heading {
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the font thicker */
+    color: #FFA500; /* Orangish color */
+    /* Optional: Add text shadow for better visibility */
+    text-shadow: 2px 2px 4px rgba(216, 215, 215, 0.4);
+    text-decoration: underline;
+}   
+
 
 footer {
     margin-top: 20px;
