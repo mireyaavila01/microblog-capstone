@@ -56,11 +56,11 @@
 
 .message-style a {
     color: #dc3545;
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Make the text bold */
+    text-decoration: none; 
+    font-weight: bold; /
     padding: 8px 16px; /* Add padding to make it look like a button */
     border-radius: 5px; /* Add rounded corners */
-    background-color: #f0f0f0; /* Background color */
+    background-color: #f0f0f0; 
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
     display: inline-block; /* Ensure link behaves like a block element */
 }
@@ -68,6 +68,6 @@
 .message-style a:hover {
     background-color: #dc3545; /* Change background color on hover */
     color: white; /* Change text color on hover */
-    text-decoration: none; /* Remove underline on hover */
+    text-decoration: none; 
 }
 

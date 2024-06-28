@@ -15,7 +15,7 @@ window.onload = function () {
     fetchUsers();
 };
 
-
+//fetches all posts and calls the function createPostCard
 function fetchPosts() {
     fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
         method: "GET",
@@ -37,7 +37,7 @@ function fetchPosts() {
 }
 
 
-
+//created the card for each post 
 function createPostCard(post) {
     // Create main card element
     let cardDiv = document.createElement("div");
@@ -113,7 +113,7 @@ function createPostCard(post) {
     return cardDiv;
 }
 
-//function to get list of users
+//gets the list of users
 function fetchUsers() {
     fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/users", {
         method: "GET",
@@ -135,6 +135,7 @@ function fetchUsers() {
         });
 }
 
+//displays the list of users
 function createUserItem(user) {
     // Create list item
     let listItem = document.createElement("a");
@@ -159,7 +160,7 @@ function createUserItem(user) {
 }
 
 
-
+//changes the format of timestamp 
 function formatTimestamp(timestamp) {
     const date = new Date(timestamp); // Create a Date object from the timestamp string
     const options = {
@@ -173,7 +174,7 @@ function formatTimestamp(timestamp) {
     return date.toLocaleDateString('en-US', options);
 }
 
-// Function to toggle like state
+// Function to toggle like button
 function toggleLike(likeButton) {
     if (likeButton.classList.contains("active")) {
         // Already liked, so unlike (remove active class)

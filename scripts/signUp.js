@@ -6,6 +6,7 @@ window.onload = function () {
     signUpBtn.onclick = signUpBtnClicked;
 }
 
+//creates new account
 function signUpBtnClicked() {
     console.log("test");
     let usernameInput = document.getElementById("username");
@@ -29,6 +30,7 @@ function signUpBtnClicked() {
         .then(response => response.json())
         .then(data => {
             console.log(data)
+            //displays message of new account added
             let messagePara =
                 document.getElementById("messagePara");
             messagePara.className = "container text-center text-danger message-style"

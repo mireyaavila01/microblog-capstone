@@ -13,7 +13,7 @@
 }
 
 .banner-sec {
-    /* background: url(https://static.pexels.com/photos/33972/pexels-photo.jpg) no-repeat left bottom; */
+     
     background-size: cover;
     min-height: 500px;
     border-radius: 0 10px 10px 0;
@@ -110,8 +110,8 @@
 
 .signup-link {
     color: #dc3545; 
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /*  make the text bold */
+    text-decoration: none; 
+    font-weight: bold; 
     padding: 5px 10px; /* Add padding to make it look like a button */
     border-radius: 5px; /* Add rounded corners */
     background-color: #f8f9fa; /* Background color for button-like effect */

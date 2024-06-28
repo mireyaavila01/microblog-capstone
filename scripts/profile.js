@@ -21,7 +21,7 @@ document.getElementById('logoutButton').addEventListener('click', function () {
 document.getElementById('postForm').addEventListener('submit', submitPost);
 
 
-
+// what happens when the submit is clicked
 function submitPost(event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -185,6 +185,7 @@ function createUserPostCard(post) {
     return cardDiv;
 }
 
+//to chnage the timestamp to a date
 function formatTimestamp(timestamp) {
     const date = new Date(timestamp); // Create a Date object from the timestamp string
     const options = {
@@ -197,7 +198,7 @@ function formatTimestamp(timestamp) {
     };
     return date.toLocaleDateString('en-US', options);
 }
-
+//for the like button
 function toggleLike(likeButton) {
     if (likeButton.classList.contains("active")) {
         // Already liked, so unlike (remove active class)
@@ -210,6 +211,7 @@ function toggleLike(likeButton) {
     }
 }
 
+//displays the logged in user details in the user profile
 function fetchUserData(username) {
     fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${username}`, {
         method: "GET",

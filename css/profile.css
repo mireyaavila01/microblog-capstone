@@ -39,7 +39,7 @@ body {
 .btn-like.active {
     background-color: rgb(245, 12, 12); /* redish background color */
     color: #fff; /* White text color */
-    border-color: rgb(245, 12, 12); /* redish border color (if applicable) */
+    border-color: rgb(245, 12, 12); /* redish border color */
 }
 
 .btn-like.active:hover {
@@ -52,10 +52,10 @@ body {
 }
 
 .my-posts-heading {
-    font-size: 2.5rem; /* Adjust the font size as needed */
-    font-weight: bold; /* Make the font thicker */
+    font-size: 2.5rem; 
+    font-weight: bold; 
     color: #FFA500; /* Orangish color */
-    /* Optional: Add text shadow for better visibility */
+    
     text-shadow: 2px 2px 4px rgba(216, 215, 215, 0.4);
     text-decoration: underline;
 }   
